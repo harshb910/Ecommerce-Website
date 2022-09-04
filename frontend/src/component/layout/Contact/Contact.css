@@ -1,0 +1,46 @@
+.contactContainer {
+    height: 100vh;
+    width: 100vw;
+    max-width: 100%;
+    display: grid;
+    place-items: center;
+    background-color: white;
+    position: fixed;
+}
+
+.mailBtn {
+    text-decoration: none;
+    transform: translateX(-100vw);
+    animation: mailBtnAnimation 2s forwards;
+}
+
+.mailBtn > button {
+    text-decoration: none;
+    font: 200 2vmax "Roboto";
+    cursor: url("../../../images/mail_cursor.png"), pointer;
+    padding: 2vmax;
+}
+
+@keyframes mailBtnAnimation {
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* @import url('https://fonts.googleapis.com/css?family=Anton'); */
+
+/* .cursor {
+  left: 0;
+  top: 0;
+  width: 10px;
+  height: 10px;
+  background-color: #f44336;
+  position: absolute;
+  border-radius: 5px;
+}
+
+.cursor__follower {
+  transition: transform .4s;
+  width: 6px;
+  height: 6px;
+} */
