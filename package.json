@@ -2,6 +2,9 @@
   "name": "ecommerce",
   "version": "1.0.0",
   "description": "This is E-Commerce Website",
+  "engines": {
+    "node": "18.x"
+  },
   "main": "backend/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
