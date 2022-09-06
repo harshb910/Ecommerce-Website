@@ -1,4 +1,5 @@
 const app = require('./app');
+const dotenv  = require('dotenv');
 
 
 
@@ -11,11 +12,13 @@ process.on('uncaughtException',(err)=>{
     console.log('Shutting down due to uncaught exception');
     process.exit(1);
 })
-
+dotenv.config({path:'./config/config.env'});
 //Config
-if (process.env.NODE_ENV !== "PRODUCTION") {
-    require("dotenv").config({ path: "backend/config/config.env" });
-}
+
+// require("dotenv").config({ path: "backend/config/config.env" });
+// console.log("Hello")
+// console.log(process.env.PORT);
+// console.log(process.env.DB_URI);
 
 //connection to Database
 connectDatabase();
@@ -32,6 +35,12 @@ const server = app.listen(process.env.PORT, ()=>{
 
 })
 
+console.log(process.env.PORT);
+console.log(process.env.DB_URI);
+
+app.get('/', (req, res) => {
+    res.send("App is running")
+});
 
 //Unhandled Promise Rejection
 process.on("unhandledRejection", err =>{

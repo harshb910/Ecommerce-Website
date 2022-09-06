@@ -38,6 +38,7 @@ const ConfirmOrder = ({history}) => {
         <Fragment>
             <MetaData title={"Confirm Order"} />
             <CheckoutSteps activeStep={1} />
+            
             <div className="confirmOrderPage">
                 <div>
                     <div className="confirmshippingArea">

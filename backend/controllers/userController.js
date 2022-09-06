@@ -1,5 +1,5 @@
 const User = require('../models/userModel');
-const ErrorHandler = require('./../utils/errorHandler');
+const ErrorHandler = require('../utils/errorhandler');
 const catchAsyncErrors = require('../middleware/catchAsyncErrors');
 const sendToken = require('../utils/jwtToken');
 const sendEmail = require('./../utils/sendEmail');
@@ -74,8 +74,8 @@ exports.forgotPassword = catchAsyncErrors(async (req, res, next) =>{
 
     await user.save({ validateBeforeSave: false });
     
-    const resetPasswordUrl = `${req.protocol}://${req.get("host")}/password/reset/${resetToken}`;
-
+    const resetPasswordUrl = `${process.env.FRONTEND_URL}/password/reset/${resetToken}`;
+    
 
     const message = `Your Password reset token is :- \n\n ${resetPasswordUrl} \n\n
                     If you have not requested this email then, kindly ignore it.`;

@@ -92,4 +92,4 @@ const ResetPassword = ({history, match}) => {
     );
 }
 
-export default ResetPassword
+export default ResetPassword;

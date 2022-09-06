@@ -1,5 +1,5 @@
 const Product = require('../models/productModel');
-const ErrorHandler = require('./../utils/errorHandler');
+const ErrorHandler = require('../utils/errorhandler');
 const catchAsyncErrors = require('../middleware/catchAsyncErrors');
 const ApiFeatures = require('../utils/apifeatures');
 const cloudinary = require("cloudinary");
@@ -143,7 +143,7 @@ exports.updateProduct = catchAsyncErrors(async (req, res, next) => {
     let product = await Product.findById(req.params.id);
   
     if (!product) {
-      return next(new ErrorHander("Product not found", 404));
+      return next(new ErrorHandler("Product not found", 404));
     }
   
     // Images Start Here
@@ -225,13 +225,13 @@ exports.createProductReview = catchAsyncErrors(async (req, res, next) => {
     const product = await Product.findById(productId);
 
     const isReviewed = product.reviews.find(
-    (rev) => rev.user.toString() === req.user._id.toString()
+        (rev) => rev.user.toString() === req.user._id.toString()
     );
 
     if (isReviewed) {
     product.reviews.forEach((rev) => {
         if (rev.user.toString() === req.user._id.toString())
-        (rev.rating = rating), (rev.comment = comment);
+            (rev.rating = rating), (rev.comment = comment);
     });
     } else {
     product.reviews.push(review);

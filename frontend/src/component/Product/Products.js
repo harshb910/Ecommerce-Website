@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useState } from 'react'
 import "./Products.css";
-import { clearErrors, getProduct} from "../../actions/productAction";
+import { getProduct } from "../../actions/productAction";
 import {useSelector, useDispatch} from "react-redux";
 import Loader from '../layout/Loader/Loader';
 import ProductCard from '../Home/ProductCard';
@@ -31,8 +31,8 @@ const Products = ({match}) => {
     const [category, setCategory] = useState("");
     const [ratings, setRatings] = useState(0);
 
-    const {loading, error, products, productsCount, resultPerPage, filteredProductsCount} = useSelector(state => state.products);
-
+    const {loading, error, products, productsCount, resultPerPage } = useSelector(state => state.products);
+    // const {filteredProductsCount} = useSelector(state => state.products);
 
     const keyword = match.params.keyword;
     
@@ -53,7 +53,7 @@ const Products = ({match}) => {
         dispatch(getProduct(keyword, currentPage, price, category, ratings));
     }, [dispatch, keyword, currentPage, price, category, ratings, alert, error]);
     
-    let count = filteredProductsCount;
+    // let count = filteredProductsCount;
     
     return (
         <Fragment>

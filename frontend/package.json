@@ -1,6 +1,9 @@
 {
   "name": "frontend",
   "version": "0.1.0",
+  "engines": {
+    "node": "18.x"
+  },
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.12.4",
@@ -61,5 +64,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://10.250.8.166:4000"
+  "proxy": "https://e-mern-harsh.herokuapp.com"
 }
