@@ -1,4 +1,11 @@
-# Install Dependencies
+# Frontend And Backend can be found on site
+
+**Frontend** - [Ecommerce Site](harsh-ecommerce-site.netlify.app)
+
+**Backend** - [Ecommerce API](https://e-mern-harsh.herokuapp.com/)
+
+
+## Install Dependencies
 
 **For Backend** - `npm i`
 
